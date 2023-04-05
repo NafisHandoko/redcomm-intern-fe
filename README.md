@@ -61,7 +61,7 @@
 
 This is a frontend part of the test. Make sure you run the backend as well. Setup the backend <a href="https://github.com/NafisHandoko/redcomm-intern-be">here</a>
 
-<!-- [![Product Name Screen Shot][product-screenshot]](https://github.com/NafisHandoko/depr-calc) -->
+<!-- [![Product Name Screen Shot][product-screenshot]](https://github.com/NafisHandoko/redcomm-intern-fe) -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -150,14 +150,14 @@ Use this space to list resources you find helpful and would like to give credit 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/NafisHandoko/depr-calc.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/NafisHandoko/redcomm-intern-fe.svg?style=for-the-badge
 [contributors-url]: https://github.com/NafisHandoko/redcomm-intern-fe/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/NafisHandoko/depr-calc.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/NafisHandoko/redcomm-intern-fe.svg?style=for-the-badge
 [forks-url]: https://github.com/NafisHandoko/redcomm-intern-fe/network/members
-[stars-shield]: https://img.shields.io/github/stars/NafisHandoko/depr-calc.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/NafisHandoko/redcomm-intern-fe.svg?style=for-the-badge
 [stars-url]: https://github.com/NafisHandoko/redcomm-intern-fe/stargazers
-[issues-shield]: https://img.shields.io/github/issues/NafisHandoko/depr-calc.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/NafisHandoko/redcomm-intern-fe.svg?style=for-the-badge
 [issues-url]: https://github.com/NafisHandoko/redcomm-intern-fe/issues
-[license-shield]: https://img.shields.io/github/license/NafisHandoko/depr-calc.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/NafisHandoko/redcomm-intern-fe.svg?style=for-the-badge
 [license-url]: https://github.com/NafisHandoko/redcomm-intern-fe/blob/master/LICENSE
 [product-screenshot]: screenshot.png
