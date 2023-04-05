@@ -96,6 +96,7 @@ cd redcomm-intern-fe
 npm install
 npm run dev
 ```
+* CTRL + Click url yang tertera di terminal
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
