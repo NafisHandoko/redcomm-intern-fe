@@ -1,14 +1,14 @@
 <template>
     <nav class="w-full shadow-md fixed bg-[#FFF6F6] z-10 top-0">
         <div class="container mx-auto py-5">
-            <h1 class="font-bold text-3xl text-[#3D3D3D]">Nature Social</h1>
+            <h1 class="font-bold text-3xl text-[#3D3D3D] text-center md:text-start">Nature Social</h1>
         </div>
     </nav>
     <section class="w-full mt-20">
         <div class="container mx-auto flex flex-col items-center gap-12 p-10 max-w-6xl">
             <!-- <input type="text" placeholder="Search by Username or Comment"
                 class="w-96 rounded-full py-2 px-4 border-none bg-white"> -->
-            <div class="relative w-96 self-end">
+            <div class="relative w-[90%] md:w-96 md:self-end">
                 <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                     <i class="bi bi-search text-red-400"></i>
                 </div>
@@ -16,7 +16,7 @@
                     class="shadow-lg bg-white border border-white text-sm rounded-full focus:ring-red-400 focus:border-red-400 block w-full pl-14 p-2.5 placeholder-red-400"
                     placeholder="Search by Username or Comment" />
             </div>
-            <div class="flex flex-col gap-5">
+            <div class="flex flex-col gap-7">
                 <div v-for="comment in comments"
                     class="flex flex-row items-start gap-5 rounded-2xl bg-white shadow-2xl p-5 relative">
                     <div
