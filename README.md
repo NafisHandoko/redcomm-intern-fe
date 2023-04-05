@@ -69,7 +69,7 @@ This is a frontend part of the test. Make sure you run the backend as well. Setu
 
 ### Built With
 
-Here's a list of the technologies we used to build this project
+Here's a list of the technologies i used to build this project
 
 * [Laravel](https://laravel.com/)
 * [Nuxt 3](https://nuxt.com/)
