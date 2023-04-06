@@ -49,7 +49,7 @@ const results = ref(5)
 const search = ref('')
 const comments = ref(null)
 
-const { data: fetchedComments } = await useFetch(`http://127.0.0.1:8000/api/comment?page=${page.value}&results=${results.value}&search=${search.value}`)
+const { data: fetchedComments } = await useFetch(`https://redcomm-intern-be.up.railway.app/api/comment?page=${page.value}&results=${results.value}&search=${search.value}`)
 comments.value = fetchedComments.value.data
 const totalPages = ref(fetchedComments.value.total/results.value)
 
@@ -66,7 +66,7 @@ const changePage = (e, selectedPage) => {
 }
 
 watchEffect(async () => {
-    const { data: fetchedComments } = await useFetch(`http://127.0.0.1:8000/api/comment?page=${page.value}&results=${results.value}&search=${search.value}`)
+    const { data: fetchedComments } = await useFetch(`https://redcomm-intern-be.up.railway.app/api/comment?page=${page.value}&results=${results.value}&search=${search.value}`)
     comments.value = fetchedComments.value.data
 })
 </script>
