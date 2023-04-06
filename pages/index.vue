@@ -23,7 +23,7 @@
                         class="absolute -top-3 -right-3 w-8 h-8 flex items-center justify-center bg-red-300 text-white rounded-full">
                         {{ comment.id }}</div>
                     <img class="rounded-full w-10 aspect-square object-cover"
-                        src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                        :src="`https://source.unsplash.com/random/?person,${comment.username}`"
                         alt="">
                     <div class="flex flex-col items-start">
                         <span class="font-bold">{{ comment.username }}</span>
