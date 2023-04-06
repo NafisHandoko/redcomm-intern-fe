@@ -5,16 +5,14 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.6.5",
-    "@vue/test-utils": "^2.3.2",
-    "@vue/vue3-jest": "^29.2.3",
-    "nuxt": "^3.3.2"
+    "postinstall": "nuxt prepare",
+    "preview": "nuxt preview"
   },
   "dependencies": {
     "@ocrv/vue-tailwind-pagination": "0.0.4"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.6.5",
+    "nuxt": "^3.3.2"
   }
 }
