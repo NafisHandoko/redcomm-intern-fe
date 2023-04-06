@@ -6,8 +6,6 @@
     </nav>
     <section class="w-full mt-20">
         <div class="container mx-auto flex flex-col items-center gap-12 p-10 max-w-6xl">
-            <!-- <input type="text" placeholder="Search by Username or Comment"
-                class="w-96 rounded-full py-2 px-4 border-none bg-white"> -->
             <div class="relative w-[90%] md:w-96 md:self-end">
                 <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                     <i class="bi bi-search text-red-400"></i>
@@ -32,11 +30,9 @@
                     </div>
                 </div>
             </div>
-            <!-- <pagination :total-pages="totalPages" :total="total" :per-page="perPage" :current-page="currentPage"
-                :has-more-pages="hasMorePages" @pagechanged="showMore">
-            </pagination> -->
+
             <div class="flex flex-row gap-3">
-                <button v-for="i in totalPages" class="rounded-full w-10 h-10 flex items-center justify-center"
+                <button v-for="i in 5" class="rounded-full w-10 h-10 flex items-center justify-center"
                     :class="page == i ? 'bg-red-500 text-white' : 'bg-white'" @click="changePage($event, i)">{{ i
                     }}</button>
             </div>
@@ -60,26 +56,13 @@ const totalPages = ref(fetchedComments.value.total/results.value)
 const load = async () => {
     if (results.value == 5) {
         results.value = 10
-        // const { data: fetchedComments } = await useFetch(`http://127.0.0.1:8000/api/comment?page=${page.value}&results=${results.value}`)
-        // comments.value = fetchedComments.value.data
     } else {
         results.value = 5
     }
 }
 
-// const searchHandler = async () => {
-//     if (search.value != '') {
-//         const { data: fetchedComments } = await useFetch(`http://127.0.0.1:8000/api/comment/search?search=${search.value}`)
-//         comments.value = fetchedComments.value
-//     } else {
-//         const { data: fetchedComments } = await useFetch(`http://127.0.0.1:8000/api/comment?page=${page.value}&results=${results.value}`)
-//         comments.value = fetchedComments.value.data
-//     }
-// }
-
 const changePage = (e, selectedPage) => {
     page.value = selectedPage
-    // console.log(page.value)
 }
 
 watchEffect(async () => {
