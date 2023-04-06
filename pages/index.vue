@@ -36,7 +36,7 @@
                     :class="page == i ? 'bg-red-500 text-white' : 'bg-white'" @click="changePage($event, i)">{{ i
                     }}</button>
             </div>
-            <button class="rounded-full text-white px-5 py-3" :class="results == 5 ? 'bg-red-400' : 'bg-red-400'"
+            <button class="rounded-full text-white px-5 py-3 hover:bg-red-500" :class="results == 5 ? 'bg-red-400' : 'bg-red-400'"
                 @click="load">{{ results == 5 ? "Load More" : "Load Less" }}</button>
             <span v-if="results==10" class="text-red-500 text-sm text-center">Maximum comments per page is 10</span>
         </div>
