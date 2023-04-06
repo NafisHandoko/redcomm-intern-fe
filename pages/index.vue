@@ -44,15 +44,18 @@
 </template>
 
 <script setup>
+// state initialization
 const page = ref(1)
 const results = ref(5)
 const search = ref('')
 const comments = ref(null)
 
+// get comment data on initial page load
 const { data: fetchedComments } = await useFetch(`https://redcomm-intern-be.up.railway.app/api/comment?page=${page.value}&results=${results.value}&search=${search.value}`)
 comments.value = fetchedComments.value.data
 const totalPages = ref(fetchedComments.value.total/results.value)
 
+// The function that is performed when the "Load More/Load Less" button is pressed
 const load = async () => {
     if (results.value == 5) {
         results.value = 10
@@ -61,10 +64,12 @@ const load = async () => {
     }
 }
 
+// function for the navigation button to move between pages
 const changePage = (e, selectedPage) => {
     page.value = selectedPage
 }
 
+// watch changes on page, results, and search state
 watchEffect(async () => {
     const { data: fetchedComments } = await useFetch(`https://redcomm-intern-be.up.railway.app/api/comment?page=${page.value}&results=${results.value}&search=${search.value}`)
     comments.value = fetchedComments.value.data
