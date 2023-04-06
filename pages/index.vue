@@ -12,7 +12,7 @@
                 <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                     <i class="bi bi-search text-red-400"></i>
                 </div>
-                <input v-model="search" @keyup="searchHandler" type="text" id="simple-search"
+                <input v-model="search" type="text" id="simple-search"
                     class="shadow-lg bg-white border border-white text-sm rounded-full focus:ring-red-400 focus:border-red-400 block w-full pl-14 p-2.5 placeholder-red-400"
                     placeholder="Search by Username or Comment" />
             </div>
@@ -40,8 +40,9 @@
                     :class="page == i ? 'bg-red-500 text-white' : 'bg-white'" @click="changePage($event, i)">{{ i
                     }}</button>
             </div>
-            <button class="rounded-full text-white px-5 py-3" :class="results == 5 ? 'bg-red-400' : 'bg-red-200'"
-                @click="loadMore">Load More</button>
+            <button class="rounded-full text-white px-5 py-3" :class="results == 5 ? 'bg-red-400' : 'bg-red-400'"
+                @click="load">{{ results == 5 ? "Load More" : "Load Less" }}</button>
+            <span v-if="results==10" class="text-red-500 text-sm text-center">Maximum comments per page is 10</span>
         </div>
     </section>
 </template>
@@ -52,27 +53,28 @@ const results = ref(5)
 const search = ref('')
 const comments = ref(null)
 
-const { data: fethedComments } = await useFetch(`http://127.0.0.1:8000/api/comment?page=${page.value}&results=${results.value}`)
+const { data: fethedComments } = await useFetch(`http://127.0.0.1:8000/api/comment?page=${page.value}&results=${results.value}&search=${search.value}`)
 comments.value = fethedComments.value.data
 
-const loadMore = async () => {
+const load = async () => {
     if (results.value == 5) {
         results.value = 10
         // const { data: fethedComments } = await useFetch(`http://127.0.0.1:8000/api/comment?page=${page.value}&results=${results.value}`)
         // comments.value = fethedComments.value.data
+    } else {
+        results.value = 5
     }
 }
 
-const searchHandler = async () => {
-    // console.log(search.value)
-    if (search != '') {
-        const { data: fethedComments } = await useFetch(`http://127.0.0.1:8000/api/comment/search?search=${search.value}`)
-        comments.value = fethedComments.value
-    } else {
-        const { data: fethedComments } = await useFetch(`http://127.0.0.1:8000/api/comment?page=${page.value}&results=${results.value}`)
-        comments.value = fethedComments.value.data
-    }
-}
+// const searchHandler = async () => {
+//     if (search.value != '') {
+//         const { data: fethedComments } = await useFetch(`http://127.0.0.1:8000/api/comment/search?search=${search.value}`)
+//         comments.value = fethedComments.value
+//     } else {
+//         const { data: fethedComments } = await useFetch(`http://127.0.0.1:8000/api/comment?page=${page.value}&results=${results.value}`)
+//         comments.value = fethedComments.value.data
+//     }
+// }
 
 const changePage = (e, selectedPage) => {
     page.value = selectedPage
@@ -80,7 +82,7 @@ const changePage = (e, selectedPage) => {
 }
 
 watchEffect(async () => {
-    const { data: fethedComments } = await useFetch(`http://127.0.0.1:8000/api/comment?page=${page.value}&results=${results.value}`)
+    const { data: fethedComments } = await useFetch(`http://127.0.0.1:8000/api/comment?page=${page.value}&results=${results.value}&search=${search.value}`)
     comments.value = fethedComments.value.data
 })
 </script>
