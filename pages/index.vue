@@ -31,7 +31,7 @@
                 </div>
             </div>
 
-            <div class="flex flex-row gap-3">
+            <div class="flex flex-row gap-3 flex-wrap justify-center items-center">
                 <button v-for="i in 5" class="rounded-full w-10 h-10 flex items-center justify-center"
                     :class="page == i ? 'bg-red-500 text-white' : 'bg-white'" @click="changePage($event, i)">{{ i
                     }}</button>
